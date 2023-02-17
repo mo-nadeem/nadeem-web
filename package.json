@@ -1,0 +1,19 @@
+{
+  "name": "nadeem-web-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mo-nadeem/nadeem-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mo-nadeem/nadeem-web/issues"
+  },
+  "homepage": "https://github.com/mo-nadeem/nadeem-web#readme",
+  "description": ""
+}
