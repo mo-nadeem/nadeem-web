@@ -234,8 +234,7 @@ header.fixed .ham-button {
   margin-right: -12px;
 }
 .logo {
-  width: 40px;
-  height: 40px;
+  margin: auto 0px auto 0px;
   color: var(--dark-navy);
   fill: var(--light-navy);
   display: flex;
