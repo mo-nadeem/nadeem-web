@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing dependencies"
+      - npm install -g aws-cli
+
+  pre_build:
+    commands:
+      - echo "Logging in to GitHub"
+      - git config --global credential.helper '!aws codebuild --profile $AWS_DEFAULT_PROFILE login'
+      - git clone https://github.com/mo-nadeem/nadeem-web.git
+      - cd yourrepository
+      - echo "Checking out the latest code"
+      - git checkout master
+
+  build:
+    commands:
+      - echo "Building your code"
+      # Add your build commands here
+      - npm install
+      - npm run build
+
+artifacts:
+  files: '**/*'
+  base-directory: atifacts-medflick
+cache:
+  paths:
+    - node_modules/**/*
+
+post_build:
+  commands:
+    - echo "Uploading artifacts to S3"
+    - aws s3 sync . s3://medflick-fe-destination/
